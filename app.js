@@ -30,11 +30,13 @@ function encriptador(){
     let n=0,x=0;
     while(n<listaNumeros.length){
             if (listaNumeros[0]==0){
-                textoEncrip=comparacion(2,x);
+                textoEncrip+=comparacion(n);
+                listaNumeros[0]=1;
+                x=1;
             }else{
-                textoEncrip+=comparacion(n,x);
+                textoEncrip+=texto.substr(x,listaNumeros[n]-x)+comparacion(n);
+                x=listaNumeros[n]+1;
             }       
-        x=listaNumeros[n]+1;
         n++;
     }
     if(vocal==1){
@@ -42,27 +44,33 @@ function encriptador(){
         console.log("cii");
     }   
     console.log(textoEncrip);
+    limpiador();
 }
 function desencriptador(){
 
 }
-function comparacion(n,x){
+function comparacion(n){
     if(texto[listaNumeros[n]]=="a"){
-        return texto.substr(x,listaNumeros[n]-x)+"ai";
+        return "ai";
      
     }else if(texto[listaNumeros[n]]=="e"){
-        return texto.substr(x,listaNumeros[n]-x)+"enter";
+        return "enter";
   
     }
     else if(texto[listaNumeros[n]]=="i"){
-        return texto.substr(x,listaNumeros[n]-x)+"imes";
+        return "imes";
     }
     else if(texto[listaNumeros[n]]=="o"){
-        return texto.substr(x,listaNumeros[n]-x)+"ober";
+        return "ober";
     }
     else if(texto[listaNumeros[n]]=="u"){
-        return texto.substr(x,listaNumeros[n]-x)+"ufat";
+        return "ufat";
        
     }
     return ;
+}
+function limpiador(){
+     listaNumeros=[];
+     texto="";
+     document.querySelector('#textoUsuario').value='';
 }
