@@ -13,10 +13,9 @@
         <img src="./img/Logo.png" alt="Imagen de relleno sin texto" class="logo">
     </div>
     <section class="cuadroPrincipal">
-      
-        
         <div class="izquierda">
-            <input type="text" id="textoUsuario" class="textoEntrada" placeholder="Ingrese el texto aquí">
+            
+            <textarea  id="textoUsuario" class="textoEntrada" placeholder="Ingrese el texto aquí"></textarea>
             <div class="botones">
                 <button onclick="encriptador();"  class="encriptador">Encriptar</button>
                 <button onclick="desencriptador();" class="desencriptador" >Desencriptar</button>
@@ -24,11 +23,10 @@
             
         </div>
         <div class="derecha">
-            <p class="textoImpreso">       
-                <img src="./img/Muñeco.png" alt="Imagen de relleno sin texto" class="muneco">
-                 Ningún mensaje fue encontrado
-                Ingresa el texto que desees encriptar o desencriptar 
-             </p>
+            <img src="./img/Muñeco.png" alt="niño viendo diamante" class="muñeco">
+            <textarea  id="textoImpreso"class="textoImpreso" placeholder="Ningún mensaje fue encontrado"></textarea>
+            <button onclick="copiar();" class="copiar" >Copiar</button>
+           
         </div>
        
     </section>

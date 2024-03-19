@@ -1,5 +1,6 @@
 let listaNumeros=[];
 var texto="";
+var impresion="";
 function asignarTextoElemento(elemento, texto){
     let elementoHTML = document.querySelector(elemento);
     elementoHTML.innerHTML = texto;
@@ -15,7 +16,7 @@ La letra "o" es convertida para "ober"
 La letra "u" es convertida para "ufat" */
 
 function encriptador(){
-    texto=document.getElementById('textoUsuario').value;
+    texto=minusculas(document.getElementById('textoUsuario').value);
     var textoEncrip="";
     let vocal=0;
     for (let n=0;n<texto.length;n++ ){
@@ -41,14 +42,16 @@ function encriptador(){
     }
     if(vocal==1){
         textoEncrip+=texto.substr(x,(texto.length-x));
-        console.log("cii");
+
     }   
+    document.querySelector('#textoImpreso').innerHTML=textoEncrip;
     console.log(textoEncrip);
+    impresion=textoEncrip;
     limpiador();
 }
 function desencriptador(){
     texto="";
-    texto=document.getElementById('textoUsuario').value;
+    texto=minusculas(document.getElementById('textoUsuario').value);
     var textoDesencrip="";
     for (let n=0;n<texto.length;n++ ){
         textoDesencrip = textoDesencrip + texto[n];
@@ -57,6 +60,9 @@ function desencriptador(){
         }
     }
         console.log(textoDesencrip);
+        document.querySelector('#textoImpreso').innerHTML=textoDesencrip;
+        impresion=textoDesencrip;
+        limpiador();
     }
 
 function convertiravocales(letra){
@@ -99,4 +105,16 @@ function limpiador(){
      listaNumeros=[];
      texto="";
      document.querySelector('#textoUsuario').value='';
+     
+
 }
+function copiar(){
+    navigator.clipboard.writeText(impresion);
+}
+function minusculas(t){
+    if(t.includes("A") || t.includes("E") || t.includes("I") || t.includes("O") || t.includes("U")){
+        alert("Te dije que sin mayúsculas y fue lo primero que hiciste :P");
+    }
+    return t.toLocaleLowerCase();
+}
+limpiador();
