@@ -44,7 +44,33 @@ function encriptador(){
     console.log(textoEncrip);
 }
 function desencriptador(){
+    texto="";
+    texto=document.getElementById('textoUsuario').value;
+    var textoDesencrip="";
+    for (let n=0;n<texto.length;n++ ){
+        textoDesencrip = textoDesencrip + texto[n];
+        if (texto[n]=="a" || texto[n]=="e" || texto[n]=="i" || texto[n]=="o" || texto[n]=="u"){
+            n= n + convertiravocales(texto[n]);
+        }
+    }
+        console.log(textoDesencrip);
+    }
 
+function convertiravocales(letra){
+   switch (letra)
+   {
+    case 'a': 
+     return 1;
+    case 'e':
+     return 4;
+    case 'i':
+     return 3;
+    case 'o':
+     return 3;
+    case 'u':
+     return 3;
+     default: return 0;
+   }
 }
 function comparacion(n,x){
     if(texto[listaNumeros[n]]=="a"){
