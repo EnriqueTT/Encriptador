@@ -1,5 +1,14 @@
+*{
+    box-sizing: border-box;
+} 
+
 body{
- background: #cccccc;
+ /*background: #cccccc;*/
+ background-image: url(./img/Fondo.jpg);
+ background-repeat: no-repeat;
+background-attachment: fixed;
+background-size: cover;
+
 }
 
 .posicionLogo{
@@ -9,7 +18,9 @@ body{
     width: 80%;
     height: 60%;
     margin: auto;
+    opacity: .8;
 }
+
 .izquierda{
     width: 60%;
     height: 700px;
