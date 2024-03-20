@@ -4,37 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+ 
     <link rel="stylesheet" href="style.css">
     <title>Encriptador-ETecuapetla</title>
     
 </head>
 <body >
-    <div class="posicionLogo">
-        <img src="./img/Logo.png" alt="Imagen de relleno sin texto" class="logo">
-    </div>
-    <section class="cuadroPrincipal">
-        <div class="izquierda">
-            
-            <textarea  id="textoUsuario" class="textoEntrada" placeholder="Ingrese el texto aquí"></textarea>
-            <p> &#10071 Solo ingresar letras minúsculas y sin acentos</p>
-            <div class="botones">
-                <button onclick="encriptador();"  class="encriptador">Encriptar</button>
-                <button onclick="desencriptador();" class="desencriptador" >Desencriptar</button>
-            </div>
-            
+    <main>
+        <div class="posicionLogo">
+            <img src="./img/Logo.png" alt="Imagen de relleno sin texto" class="logo">
         </div>
-        <div class="derecha">
-            <img src="./img/Muñeco.png" alt="niño viendo diamante" class="muñeco" id="muñeco">
-            <textarea  id="textoImpreso"class="textoImpreso" placeholder="Ningún mensaje fue encontrado"></textarea>
-            <div class="divCopiar">
-                <button onclick="copiar();" class="copiar" >Copiar</button>
-           
+        <section class="cuadroPrincipal">
+            <div class="izquierda">
+                
+                <textarea  id="textoUsuario" class="textoEntrada" placeholder="Ingrese el texto aquí"></textarea>
+                <p> &#10071 Solo ingresar letras minúsculas y sin acentos</p>
+                <div class="botones">
+                    <button onclick="encriptador();"  class="encriptador">Encriptar</button>
+                    <button onclick="desencriptador();" class="desencriptador" >Desencriptar</button>
+                </div>
+                
             </div>
+            <div class="derecha">
+                <img src="./img/Muñeco.png" alt="niño viendo diamante" class="muñeco" id="muñeco">
+                <textarea  id="textoImpreso"class="textoImpreso" placeholder="Ningún mensaje fue encontrado"></textarea>
+                <div class="divCopiar">
+                    <button onclick="copiar();" class="copiar" >Copiar</button>
             
+                </div>
+                
+            </div>
+        
+        </section>
+    </main>
+    <footer>
+        <div class="icono">
+            <a href="https://www.linkedin.com/in/enrique-tecuapetla/" class="fa fa-linkedin"></a>
         </div>
-       
-    </section>
-   
+        <p class="pie">Encriptador diseñado por Jose Enrique Tecuapetla Trejo  &#128516  - ¡¡Gracias ALURA!! </p>
+    </footer>
     <script src="app.js"></script>
 </body>
 </html>
