@@ -17,7 +17,7 @@ La letra "u" es convertida para "ufat" */
 
 function encriptador(){
     texto=minusculas(document.getElementById('textoUsuario').value);
-    var textoEncrip="";
+    var textoProc="";
     let vocal=0;
     for (let n=0;n<texto.length;n++ ){
         if (texto[n]=="a" || texto[n]=="e" || texto[n]=="i" || texto[n]=="o" || texto[n]=="u"){
@@ -31,39 +31,43 @@ function encriptador(){
     let n=0,x=0;
     while(n<listaNumeros.length){
             if (listaNumeros[0]==0){
-                textoEncrip+=comparacion(n);
+                textoProc+=comparacion(n);
                 listaNumeros[0]=1;
                 x=1;
             }else{
-                textoEncrip+=texto.substr(x,listaNumeros[n]-x)+comparacion(n);
+                textoProc+=texto.substr(x,listaNumeros[n]-x)+comparacion(n);
                 x=listaNumeros[n]+1;
             }       
         n++;
     }
     if(vocal==1){
-        textoEncrip+=texto.substr(x,(texto.length-x));
+        textoProc+=texto.substr(x,(texto.length-x));
 
     }   
-    document.querySelector('#textoImpreso').innerHTML=textoEncrip;
-    console.log(textoEncrip);
-    impresion=textoEncrip;
-    limpiador();
+    pantalla(textoProc);
 }
 function desencriptador(){
     texto="";
     texto=minusculas(document.getElementById('textoUsuario').value);
-    var textoDesencrip="";
+    var textoProc="";
     for (let n=0;n<texto.length;n++ ){
-        textoDesencrip = textoDesencrip + texto[n];
+        textoProc = textoProc + texto[n];
         if (texto[n]=="a" || texto[n]=="e" || texto[n]=="i" || texto[n]=="o" || texto[n]=="u"){
             n= n + convertiravocales(texto[n]);
         }
     }
-        console.log(textoDesencrip);
-        document.querySelector('#textoImpreso').innerHTML=textoDesencrip;
-        impresion=textoDesencrip;
-        limpiador();
+    pantalla(textoProc);
     }
+
+function pantalla(textop){
+    document.querySelector('#textoImpreso').innerHTML=textop;
+    document.getElementById('muñeco').style.display="none";
+    document.getElementById('textoImpreso').style.height="80%";
+    document.getElementById('textoImpreso').style.textAlign="left"
+    impresion=textop;
+    console.log(textop);
+    limpiador();
+}
 
 function convertiravocales(letra){
    switch (letra)
@@ -110,6 +114,10 @@ function limpiador(){
 }
 function copiar(){
     navigator.clipboard.writeText(impresion);
+    document.getElementById('muñeco').style.display="initial";
+    document.getElementById('textoImpreso').style.height="40%";
+    document.getElementById('textoImpreso').style.textAlign="center";
+    document.querySelector('#textoImpreso').innerHTML="";
 }
 function minusculas(t){
     if(t.includes("A") || t.includes("E") || t.includes("I") || t.includes("O") || t.includes("U")){

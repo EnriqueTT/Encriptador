@@ -16,6 +16,7 @@
         <div class="izquierda">
             
             <textarea  id="textoUsuario" class="textoEntrada" placeholder="Ingrese el texto aquí"></textarea>
+            <p> &#10071 Solo ingresar letras minúsculas y sin acentos</p>
             <div class="botones">
                 <button onclick="encriptador();"  class="encriptador">Encriptar</button>
                 <button onclick="desencriptador();" class="desencriptador" >Desencriptar</button>
@@ -23,15 +24,16 @@
             
         </div>
         <div class="derecha">
-            <img src="./img/Muñeco.png" alt="niño viendo diamante" class="muñeco">
+            <img src="./img/Muñeco.png" alt="niño viendo diamante" class="muñeco" id="muñeco">
             <textarea  id="textoImpreso"class="textoImpreso" placeholder="Ningún mensaje fue encontrado"></textarea>
-            <button onclick="copiar();" class="copiar" >Copiar</button>
+            <div class="divCopiar">
+                <button onclick="copiar();" class="copiar" >Copiar</button>
            
+            </div>
+            
         </div>
        
     </section>
-
-
    
     <script src="app.js"></script>
 </body>
