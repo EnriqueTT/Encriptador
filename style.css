@@ -128,7 +128,8 @@ p{
     color: #D8DFE8;
 }
 footer{
-    margin-top: 1em;    
+    margin-top: 1em;  
+    margin-bottom: 1em;  
 }
 .icono{
     display: flex;
@@ -152,4 +153,40 @@ footer{
     background: none;
     display: flex;
     justify-content: space-around; 
+}
+
+@media screen and (max-width:800px){
+    .cuadroPrincipal{
+        display: inline;
+        height: 700px;/*
+        min-width: 700px;*/
+    }
+    .izquierda{width: 100%;
+        height: 60%;
+        display: inline-block;
+}
+.textoEntrada{
+    width: 100%;
+    height: 80%;
+    font-size: 30px;
+}
+.botones{
+    height: 10%;
+}
+.derecha{
+    width: 100%;
+    height: 30%;
+    background: #cccccc;
+    border-radius: 24px;
+}
+.muñeco{width: 0%;
+    height: 0%;
+    visibility: hidden;}
+    
+.textoImpreso{
+    width: 100%;
+    height: 40%;
+    font-size: 30px;
+    text-align: center;
+}
 }
