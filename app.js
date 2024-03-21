@@ -65,7 +65,7 @@ function pantalla(textop){
     document.getElementById('textoImpreso').style.height="80%";
     document.getElementById('textoImpreso').style.textAlign="left"
     impresion=textop;
-    console.log(textop);
+    //console.log(textop);
     limpiador();
 }
 
@@ -126,3 +126,7 @@ function minusculas(t){
     return t.toLocaleLowerCase();
 }
 limpiador();
+console.log("Bienvenido a mi programa");
+console.log("Es un placer para mi poder aplicar lo aprendido en los cursos de Alura en un proyecto tan práctico como este.");
+console.log("Se que hay un camino largo por recorrer, y eso solo lo hace más emocionante");
+console.log("PD: Hay un mensaje oculto si decides colocar alguna vocal en mayúscula ;D");
